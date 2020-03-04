@@ -12,7 +12,7 @@ https://med-cabinet2.herokuapp.com/
 | DELETE | /api/users/:id/strains | Deletes a strain from users saved strains list             |
 |     GET   |   /api/strains                     |       Get an array of strains                                                     |
 |    GET	    |        /api/strains/:id	                |    Get a specific strain with the provided id in URL
-                                                        |
+                                                        
 
 Endpoint usage
 
