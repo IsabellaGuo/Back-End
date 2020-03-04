@@ -38,7 +38,7 @@ router.post('/login', (req, res) => {
                 const token = generateToken(user);
 
                 res.status(200).json({
-                    message: `Welcome ${user.first_name}`,
+                    message: `Welcome ${user.username}`,
                     token,
                     user: {
                         user_id: user.user_id,
@@ -127,7 +127,7 @@ function generateToken(user) {
     
 
     const options = {
-        expiresIn: '1h',
+        expiresIn: '8h',
     };
 
     return jwt.sign(payload, jwtSecret, options);

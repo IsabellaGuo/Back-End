@@ -6,14 +6,25 @@ const restricted = require('../auth/restricted');
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+    db.getStrains()
+      .then(db => {
+        res.status(200).json(db);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({ error: "The strains information could not be found" });
+      });
+  });
+
 router.get('/', restricted, (req, res) => {
     db.getStrains()
         .then(strains => {
             const refractored = strains.map(strain => {
                 return {
                     ...strain,
-                    strain_effects: strain.strain_effects.split(','),
-                    strain_flavors: strain.strain_flavors.split(',')
+                    // strain_effects: strain.strain_effects.split(','),
+                    // strain_flavors: strain.strain_flavors.split(',')
                 }
             });
             res.send(refractored);
