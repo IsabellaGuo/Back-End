@@ -16,11 +16,6 @@ https://med-cabinet2.herokuapp.com/
 
 Endpoint usage
 
-POST
-
-/api/users/register - register users with the following object model:
-
-Endpoint usage
 
 POST
 
@@ -32,14 +27,15 @@ POST
     email: 'isa@yahoo.com',
     password: '123'
 }
+```
 
 POST
 
 /api/users/login - login users with the following object model:
-
+```
 {
     email: 'isa@yahoo.com',
     password: '123'
 }
-
+```
 
