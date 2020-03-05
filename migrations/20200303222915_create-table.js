@@ -11,6 +11,7 @@ exports.up = function(knex) {
               .string('email')
               .notNullable()
               .unique();
+              
 
           tbl
               .string('password', 128)
@@ -28,10 +29,10 @@ exports.up = function(knex) {
               .string('strain_type')
               .notNullable();
 
-        //   tbl.integer('strain_rating');
+          tbl.integer('strain_rating');
           tbl.text('strain_description');
-        //   tbl.string('strain_effects');
-        //   tbl.string('strain_flavors');
+          tbl.string('strain_effects');
+          tbl.string('strain_flavors');
     })
   .createTable('Saved_Strains', tbl => {
       tbl.increments('saved_strain_id');
