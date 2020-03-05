@@ -2,9 +2,9 @@ const db = require('../database/helper.js');
 const bcrypt = require('bcryptjs');
 
 module.exports = (req, res, next) => {
-    const {email, password} = req.headers;
+    const {authorization} = req.headers;
 
-    if(email && password) {
+    if(authorization) {
         db.findUserByEmail(email)
             .then(user => {
                 if(user && bcrypt.compareSync(password, user.password)) {

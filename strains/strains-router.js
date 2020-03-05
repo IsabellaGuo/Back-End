@@ -23,7 +23,8 @@ router.get('/', restricted, (req, res) => {
             const refractored = strains.map(strain => {
                 return {
                     ...strain,
-                   
+                    strain_effects: strain.strain_effects.split(','),
+                    strain_flavors: strain.strain_flavors.split(',')
                 }
             });
             res.send(refractored);
