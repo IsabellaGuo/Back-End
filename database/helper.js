@@ -53,7 +53,7 @@ function findStrain(id) {
 function saveStrain(userID, strainID) {
     return db('Saved_Strains')
         .insert({
-            user: userID,
+            // user: userID,
             strain: strainID
         });
 }
