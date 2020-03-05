@@ -83,6 +83,7 @@ router.post('/:id/strains', restricted, (req, res) => {
                 db.saveStrain(id, req.body.strainID)
                     .then(() => res.sendStatus(201))
                     .catch(() => res.sendStatus(500));
+                    
             })
             .catch(() => res.sendStatus(404))
     } else {

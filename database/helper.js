@@ -46,14 +46,14 @@ function getStrains() {
 
 function findStrain(id) {
     return db('Strains')
-        .where('strain_id', id)
+        .where({strain_id:id})
         .first();
 }
 
 function saveStrain(userID, strainID) {
     return db('Saved_Strains')
         .insert({
-            // user: userID,
+            user: userID,
             strain: strainID
         });
 }
