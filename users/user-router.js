@@ -76,7 +76,7 @@ router.put('/:id/email', restricted, (req, res) => {
 
 router.post('/:id/strains', restricted, (req, res) => {
     const id = req.params.id;
-
+    console.log(req.body);
     if(req.body.strainID) {
         db.findStrain(req.body.strainID)
             .then(() => {
